@@ -1,0 +1,32 @@
+#include <iostream>
+
+// Function to calculate factorial using recursion
+unsigned long long factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+// Function to multiply odd numbers in a given range
+unsigned long long multiplyOddNumbers(int start, int end) {
+    unsigned long long product = 1;
+    for (int i = start; i <= end; ++i) {
+        if (i % 2 != 0) {
+            product *= i;
+        }
+    }
+    return product;
+}
+
+int main() {
+    std::cout << "Factorials of numbers from 1 to 15:" << std::endl;
+    for (int i = 1; i <= 15; ++i) {
+        std::cout << "Factorial of " << i << " = " << factorial(i) << std::endl;
+    }
+
+    unsigned long long oddProduct = multiplyOddNumbers(1, 15);
+    std::cout << "\nProduct of odd numbers from 1 to 15 = " << oddProduct << std::endl;
+
+    return 0;
+}
